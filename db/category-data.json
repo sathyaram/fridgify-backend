@@ -16,7 +16,7 @@
     "icon" : "https://image.flaticon.com/icons/svg/493/493708.svg"
   },
   {
-    "name" : "Freezer",
+    "name" : "Frozen",
     "icon" : "https://image.flaticon.com/icons/svg/626/626679.svg"
   },
   {
@@ -25,7 +25,7 @@
   },
   {
     "name" : "Snacks",
-    "icon" : "https://image.flaticon.com/icons/svg/1188/1188379.svg"
+    "icon" : "https://image.flaticon.com/icons/svg/1152/1152198.svg"
   },
   {
     "name" : "Condiments",
@@ -33,10 +33,10 @@
   },
   {
     "name" : "Grains",
-    "icon" : "https://image.flaticon.com/icons/svg/1139/1139849.svg"
+    "icon" : "https://image.flaticon.com/icons/svg/1208/1208385.svg"
   },
   {
     "name" : "Other",
-    "icon" : "https://image.flaticon.com/icons/svg/1190/1190966.svg"
+    "icon" : "https://image.flaticon.com/icons/svg/1161/1161623.svg"
   }
 ]
