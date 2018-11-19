@@ -1,5 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const passport = require('passport')
+const flash = require('connect-flash');
+const session = require('express-session');
 
 // set up express app
 const app = express()
@@ -11,15 +14,34 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Passport
+let secret;
+if (process.env.NODE_ENV === 'production') {
+  secret = process.env.EXPRESS_SECRET
+} else {
+  secret = 'some stupid secret'
+}
+
+if (!secret) {
+  throw new Error('Environment variable EXPRESS_SECRET should be set! Cannot start application!')
+}
+
+app.use(session({
+   secret: secret,
+   resave: false,
+   saveUninitialized: true
+  }));
+
+require('./config/passport')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
+
 app.use(bodyParser.json())
 
 // initialize routes
 app.use('/', require('./routes/api'))
-
-// error handling middleware
-// app.use(function (err, req, res, next) {
-//   res.status(422).send({error: err.message})
-// })
 
 // listen for requests
 app.set('port', process.env.PORT || 3001)
